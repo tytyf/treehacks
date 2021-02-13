@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="assets/css/main.css" />
+
+    <link rel="stylesheet" href="https://js.arcgis.com/4.18/esri/css/main.css">
+    <script src="https://js.arcgis.com/4.18/"></script>
+    <script>
+        require(["esri/config","esri/Map", "esri/views/MapView", "esri/Graphic",
+    "esri/layers/GraphicsLayer"], function (esriConfig,Map, MapView, Graphic, GraphicsLayer) {
+            esriConfig.apiKey = "AAPK5374f6e4d1594536adacac391a09cc2fOIGhUwnUGPXvPCarT5nnK6pOHaCydq7rd6rx92lDL04yqig_tJfED793FEGV1Trd";
+
+            const map = new Map({
+            basemap: "arcgis-topographic" // Basemap layer service
+            });
+
+
+            const view = new MapView({
+            map: map,
+            center: [-121.2358, 38.790733], // Longitude, latitude
+            zoom: 13, // Zoom level
+            container: "viewDiv" // Div element
+            });
+
+
+            window.console.log(GraphicsLayer);
+            const graphicsLayer = new GraphicsLayer();
+            map.add(graphicsLayer);
+
+
+
+            function addPoint(longitude, latitude, color, title, content) {
+                const point = { //Create a point
+                type: "point",
+                longitude,
+                latitude
+            };
+            const simpleMarkerSymbol = {
+                type: "simple-marker",
+                color, 
+                outline: {
+                    color: [255, 255, 255], // White
+                    width: 1
+                }
+            };
+            const popupTemplate = {
+                title,
+                content
+            }
+            const pointGraphic = new Graphic({
+                geometry: point,
+                symbol: simpleMarkerSymbol,
+                popupTemplate: popupTemplate
+            });
+            graphicsLayer.add(pointGraphic);
+            }
+
+            addPoint(-121.34474270044366, 38.910315161762675, [231, 76 , 60], "Flight Adventure", "Adventure Flight offers a wide range of flight training and aviation experiences. All of our airplanes are WWII era trainers.");
+            addPoint(-121.43714194893299, 38.55811185293342, [230, 126, 34], "Bungee Adventures", "We run bungee jump, rope swing and BASE jump adventures in Northern California. Objects: We jump off bridges, trees, dams & rocks in remote.")
+
+            
+            addPoint(-122.36167580228384, 38.402255072419514, [241, 196, 15], "Napa Valley Aloft Balloon Rides", "Napa Valley Aloft Balloon Rides offers a beautiful flight launching from historical Pope Valley Winery. If Napa Valley is completely fogged in we offer (not mandatory) a flight from Paradisa Valley 1 hour (shuttled ride) away located in Putah Creek Wildlife Area.")
+            addPoint(-120.92113204360955, 38.80664184355196, [46, 204, 113], "Camp Lotus", "Camp Lotus Lodge & Campground lies on the bank of the South Fork American River. A perfect location for weddings, events, gatherings, or simply pitching a tent on soft grass near the river. We strive to provide guests with the unique experience of being immersed in the outdoors while still having some simple comforts, like a muffin and espresso in the morning. adventures in Northern California. Objects: We jump off bridges, trees, dams & rocks in remote.")
+            
+            addPoint(-120.92831010227161, 38.81765304579603, [52, 152, 219], "Whitewater Excitement", "Rafting and whitewater rafting are recreational outdoor activities which use an inflatable raft to navigate a river or other body of water. This is often done on whitewater or different degrees of rough water. Dealing with risk is often a part of the experience.")
+            addPoint(-120.93402775994181, 38.81936753736379, [155, 89, 182], "Raft California", "White Water Rafting trips in California for all ages! We offer more white water river rafting trips on the Truckee River, Yuba River & Trinity River.")
+
+
+
+
+
+        });
+
+
+
+      </script>
+
+
+    <style>
+        html,
+        body,
+        #viewDiv {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -5;
+        }
+    </style>
+
+
+    <title>Document</title>
+</head>
+<body class="is-preload">
+
+    
+    <header id="header">
+        <div class="inner">
+            <a href="#" class="image avatar"><img src="images/tj.jpg" alt="" /></a>
+            <h1><strong>Hey! I'm TJ Bahia.</strong> <br />
+                <i class="fas fa-map-pin"></i> Sacramento, CA <br />
+                I like eating, jumping out of planes, and holding snakes.<br /> 
+                I'm down to meet new friends!
+
+            </h1>
+        </div>
+    </header>
+
+<!-- Main -->
+    <div id="main">
+
+        <!-- One -->
+            
+
+        <!-- Two -->
+            <section id="two">
+                <h2>People who have Skydiving in their bucket list...</h2>
+                <div class="row">
+                    <article class="col-6 col-12-xsmall work-item">
+                        <a href="images/hannah.jpg" class="image fit thumb"><img src="images/hannah.jpg" alt="" /></a>
+                        <h3>Make plans with: <a href="#" >Hannah Gonzalez</a></h3>
+                        
+                    </article>
+                    <article class="col-6 col-12-xsmall work-item">
+                        <a href="images/friend.png" class="image fit thumb"><img src="images/friend.png" alt="" /></a>
+                        <h3>Make plans with: <a href="#" >Wonho</a></h3>
+                        
+                    </article>
+                    <article class="col-6 col-12-xsmall work-item">
+                            <a href="images/adam.jpg" class="image fit thumb"><img src="images/adam.jpg" alt="" /></a>
+                            <h3>Make plans with: <a href="#" >Adam Mosseri</a></h3>
+                            
+                        </article>
+                    
+                    <article class="col-6 col-12-xsmall work-item">
+                        <a href="images/zuzia.jpg" class="image fit thumb"><img src="images/zuzia.jpg" alt="" /></a>
+                        <h3>Make plans with: <a href="#" >Zuzanna Matysiak</a></h3>
+                        
+                    </article>
+                    
+                </div>
+                
+            </section>
+            
+            <section>
+                    <h2>You can go to...</h2>
+
+                </section>
+     
+
+    </div>
+
+    <div id="viewDiv"></div>   
+
+<!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+            <ul class="icons">
+                <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+            </ul>
+            <ul class="copyright">
+                <li>&copy; Cross Off</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            </ul>
+        </div>
+    </footer>
+
+<!-- Scripts -->
+    <!-- <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.poptrox.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script> -->
+    </body>
+</html>
