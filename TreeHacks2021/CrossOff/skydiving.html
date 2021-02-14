@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Skydiving</title>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +23,7 @@
             const view = new MapView({
             map: map,
             center: [-121.2358, 38.790733], // Longitude, latitude
-            zoom: 13, // Zoom level
+            zoom: 9, // Zoom level
             container: "viewDiv" // Div element
             });
 
@@ -73,26 +75,10 @@
 
 
         });
+    </script>
 
 
-
-      </script>
-
-
-    <style>
-        html,
-        body,
-        #viewDiv {
-        padding: 0;
-        margin: 0;
-        height: 100%;
-        width: 100%;
-        z-index: -5;
-        }
-    </style>
-
-
-    <title>Document</title>
+    <title>Activity</title>
 </head>
 <body class="is-preload">
 
@@ -104,18 +90,21 @@
                 <i class="fas fa-map-pin"></i> Sacramento, CA <br />
                 I like eating, jumping out of planes, and holding snakes.<br /> 
                 I'm down to meet new friends!
-
             </h1>
+            <ul class="icons">
+                <li><a href="https://twitter.com/tjtheoverlord" style="color: #b2b2b2;" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="https://www.instagram.com/tjtheoverlord/" style="color: #b2b2b2;" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+            </ul>
+            <ul class="love">
+                <p>Made with <span style="color: #e25555;">&hearts;</span> by the Cross Off team</p>
+            </ul>
         </div>
     </header>
 
 <!-- Main -->
     <div id="main">
 
-        <!-- One -->
-            
-
-        <!-- Two -->
+        <!--Friends-->
             <section id="two">
                 <h2>People who have Skydiving in their bucket list...</h2>
                 <div class="row">
@@ -142,31 +131,15 @@
                     </article>
                     
                 </div>
+
+                <h2>You can go to...</h2>
+                <div class="row">
+                    <div class="col-12 col-12-xlarge" id="viewDiv"></div>  
+                </div>
                 
             </section>
-            
-            <section>
-                    <h2>You can go to...</h2>
-
-                </section>
-     
 
     </div>
-
-    <div id="viewDiv"></div>   
-
-<!-- Footer -->
-    <footer id="footer">
-        <div class="inner">
-            <ul class="icons">
-                <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-                <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-            </ul>
-            <ul class="copyright">
-                <li>&copy; Cross Off</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-            </ul>
-        </div>
-    </footer>
 
 <!-- Scripts -->
     <!-- <script src="assets/js/jquery.min.js"></script>
